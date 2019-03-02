@@ -1,14 +1,22 @@
 def generate_matrices():
-    for i in range(0, 63):
+    for i in range(0, 64):
         with open("labels/king/" + str(i + 1) + ".json", "w") as fboard:
             fboard.write(str(generate_matrix("K", i)))
         with open("labels/pawn/" + str(i + 1) + ".json", "w") as fboard:
             fboard.write(str(generate_matrix("P", i)))
+        with open("labels/bishop/" + str(i + 1) + ".json", "w") as fboard:
+            fboard.write(str(generate_matrix("B", i)))
+        with open("labels/queen/" + str(i + 1) + ".json", "w") as fboard:
+            fboard.write(str(generate_matrix("Q", i)))
+        with open("labels/rook/" + str(i + 1) + ".json", "w") as fboard:
+            fboard.write(str(generate_matrix("R", i)))
+        with open("labels/knight/" + str(i + 1) + ".json", "w") as fboard:
+            fboard.write(str(generate_matrix("N", i)))
 
 
 def generate_matrix(piece, pos):
     matrix = []
-    for i in range(0, 63):
+    for i in range(0, 64):
         if i == pos:
             matrix.append(generate_vector(piece))
         else:
